@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Provinsi extends Model
+{
+    protected $table = 'provinsi';
+    protected $fillable = ['kode', 'nama'];
+    
+    public function kabupaten()
+    {
+        return $this->hasMany(Kabupaten::class);
+    }
+    
+    public function prestasi()
+    {
+        return $this->hasMany(Prestasi::class);
+    }
+}
